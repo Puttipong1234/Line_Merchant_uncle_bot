@@ -1,4 +1,4 @@
-from Project import app , static_file_dir 
+from Project import app , static_file_dir ,line_bot_api
 from flask import send_from_directory , abort , request , session
 
 from linebot.exceptions import (
@@ -23,7 +23,7 @@ def hello_world():
 def return_Pic(filename): 
     return send_from_directory(static_file_dir,filename)
 
-from Project.MessageTemplate.MessageTemp import course_01 ,course_02 , send_flex, SetMenuMessage_Object
+from Project.MessageTemplate.MessageTemp import *
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -47,15 +47,19 @@ def callback():
             return 'OK'
         
         elif isinstance(event,PostbackEvent):
-            print(event.postback.data)
-            message = SetMenuMessage_Object(course_01)
-            send_flex(event.reply_token,message)
-            return 'OK'
+            # print(event.postback.data) get postback data from Event
+            data = event.postback.data
+            for i in all_course:
+                if data == i:
+                    message = SetMenuMessage_Object(i)
+                    send_flex(event.reply_token,message)
+                    return 'OK'
 
         else :
             message = SetMenuMessage_Object(course_01)
             send_flex(event.reply_token,message)
             return 'OK'
+            
     return 'OK'
 
 
