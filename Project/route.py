@@ -44,20 +44,20 @@ def callback():
             if isinstance(event,FollowEvent):
                 message = SetMenuMessage_Object(course_02)
                 send_flex(message)
-                return jsonify(success=True)
+                return 'OK'
             
             else :
                 message = SetMenuMessage_Object(course_01)
                 send_flex(message)
-                return jsonify(success=True)
+                return 'OK'
 
         else :
-            return jsonify(success=True)
+            return 'OK'
         
 
 
     
-    return jsonify(success=True)
+    return 'OK'
 
 
 
