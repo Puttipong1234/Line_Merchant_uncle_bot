@@ -27,6 +27,9 @@ def SetMenuMessage_Object(Message_data,Quick_Reply = False):
     return file_data
 
 
+
+
+
 course_01 = {
   "type": "flex",
   "altText": "Flex Message",
@@ -46,11 +49,6 @@ course_01 = {
           "type": "box",
           "layout": "vertical",
           "spacing": "xxl",
-          "action": {
-            "type": "uri",
-            "label": "Action",
-            "uri": "https://linecorp.com"
-          },
           "contents": [
             {
               "type": "text",
@@ -209,7 +207,7 @@ course_01 = {
               "action": {
                 "type": "postback",
                 "label": "ซื้อคอสเรียน",
-                "text": "ซื้อคอสเรียน - 01",
+
                 "data": "RPINE"
               },
               "color": "#007F4E",
@@ -246,11 +244,6 @@ course_01 = {
           "type": "box",
           "layout": "vertical",
           "spacing": "xxl",
-          "action": {
-            "type": "uri",
-            "label": "Action",
-            "uri": "https://linecorp.com"
-          },
           "contents": [
             {
               "type": "text",
@@ -409,7 +402,7 @@ course_01 = {
               "action": {
                 "type": "postback",
                 "label": "ซื้อคอสเรียน",
-                "text": "ซื้อคอสเรียน - 02",
+
                 "data": "DJANGO"
               },
               "color": "#C50020",
@@ -446,11 +439,6 @@ course_01 = {
           "type": "box",
           "layout": "vertical",
           "spacing": "xxl",
-          "action": {
-            "type": "uri",
-            "label": "Action",
-            "uri": "https://linecorp.com"
-          },
           "contents": [
             {
               "type": "text",
@@ -609,7 +597,7 @@ course_01 = {
               "action": {
                 "type": "postback",
                 "label": "ซื้อคอสเรียน",
-                "text": "ซื้อคอสเรียน - 03",
+
                 "data": "AUBOT"
               },
               "color": "#B400A4",
@@ -646,11 +634,6 @@ course_01 = {
           "type": "box",
           "layout": "vertical",
           "spacing": "xxl",
-          "action": {
-            "type": "uri",
-            "label": "Action",
-            "uri": "https://linecorp.com"
-          },
           "contents": [
             {
               "type": "text",
@@ -809,7 +792,7 @@ course_01 = {
               "action": {
                 "type": "postback",
                 "label": "ซื้อคอสเรียน",
-                "text": "ซื้อคอสเรียน - 03",
+
                 "data": "AUBOT"
               },
               "color": "#006B83",
@@ -880,7 +863,7 @@ course_02 = {
               "action": {
                 "type": "postback",
                 "label": "ข้อมูลเพิ่มเติม",
-                "text": "ข้อมูลเพิ่มเติม",
+                
                 "data": "01"
               }
             },
@@ -894,7 +877,7 @@ course_02 = {
               "action": {
                 "type": "postback",
                 "label": "ข้อมูลเพิ่มเติม",
-                "text": "ข้อมูลเพิ่มเติม",
+                
                 "data": "01"
               }
             }
@@ -916,7 +899,7 @@ course_02 = {
               "action": {
                 "type": "postback",
                 "label": "ข้อมูลเพิ่มเติม",
-                "text": "ข้อมูลเพิ่มเติม",
+                
                 "data": "01"
               }
             },
@@ -930,7 +913,7 @@ course_02 = {
               "action": {
                 "type": "postback",
                 "label": "ข้อมูลเพิ่มเติม",
-                "text": "ข้อมูลเพิ่มเติม",
+                
                 "data": "01"
               }
             }
@@ -947,7 +930,6 @@ course_02 = {
           "action": {
             "type": "postback",
             "label": "สนใจคอสเรียน",
-            "text": "สนใจคอสเรียน",
             "data": "สนใจคอสเรียน"
           },
           "color": "#D0D0D0",

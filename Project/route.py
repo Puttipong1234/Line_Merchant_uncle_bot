@@ -23,7 +23,7 @@ def hello_world():
 def return_Pic(filename): 
     return send_from_directory(static_file_dir,filename)
 
-from Project.MessageTemplate.MessageTemp import course_01,course_02, send_flex, SetMenuMessage_Object
+from Project.MessageTemplate.MessageTemp import course_01 ,course_02 , send_flex, SetMenuMessage_Object
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -41,24 +41,19 @@ def callback():
 
     # if event is MessageEvent and message is TextMessage, then echo text
     for event in events:
-        if session['user'] is None:
-            if isinstance(event,FollowEvent):
-                message = SetMenuMessage_Object(course_02)
-                send_flex(message)
-                return 'OK'
-            
-            else :
-                message = SetMenuMessage_Object(course_01)
-                send_flex(message)
-                return 'OK'
-
-        else :
+        if isinstance(event,FollowEvent):
+            message = SetMenuMessage_Object(course_02)
+            send_flex(event.reply_token,message)
             return 'OK'
         
+        else :
+            message = SetMenuMessage_Object(course_01)
+            send_flex(event.reply_token,message)
+            return 'OK'
+    return 'OK'
 
 
     
-    return 'OK'
 
 
 
