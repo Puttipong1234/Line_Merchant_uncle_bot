@@ -1,4 +1,4 @@
-from flask import Flask, session , send_from_directory , request , session ,abort
+from flask import Flask
 import os
 
 app = Flask(__name__)
@@ -10,13 +10,14 @@ from linebot import (
 )
 
 
+app_url = "https://uncle-merchant.herokuapp.com"
 
 
 from Project import route
 
 # get channel_secret and channel_access_token from your environment variable
-channel_secret = '77c6498f2b89f2df4959f8d21059559c'
-channel_access_token = 'Lry+9veBfCmgtFB43jv8ir6wGqNgLw/rA6r89OA+cSAnjyKlighcNjZpwGG2VN0kB2xPn68RwzdiM17AKKPE4kW5OLWpBD+kO2LJ2NpPTZ/x0W5gsNocc1p4j5GL6KJ9tEDZjiPdjGPOz2x1ssawLwdB04t89/1O/w1cDnyilFU='
+channel_secret = '4e884f99620d9fa1d728a83f3e2a6c8e'
+channel_access_token = 'brEjhlrvM0K9byTI0dJM6+syPX/ykchnIeiUHg3dfuDo5WAbofHCIJ8mxVk83RWasMrQiLigwt1/YRG+CVOipwqMl//Zy1O7hl1m640lpFsiT4h6c5/XOQfunU1r9my8fS6zK9fXiSL+7Qj2Z6CregdB04t89/1O/w1cDnyilFU='
 
 line_bot_api = LineBotApi(channel_access_token)
 parser = WebhookParser(channel_secret)
