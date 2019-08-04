@@ -1696,4 +1696,4 @@ LINE = {
   }
 }
 
-all_course = [RPINE,DJANGO,AUBOT,LINE]
+all_course = {'RPINE':RPINE,'DJANGO':DJANGO,'AUBOT':AUBOT,'LINE':LINE}

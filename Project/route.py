@@ -49,17 +49,17 @@ def callback():
         elif isinstance(event,PostbackEvent):
             # print(event.postback.data) get postback data from Event
             data = event.postback.data
-            for i in all_course:
-                if data == i:
-                    message = SetMenuMessage_Object(i)
+            for key,value in all_course.items():
+                if data == key:
+                    message = SetMenuMessage_Object(value)
                     send_flex(event.reply_token,message)
                     return 'OK'
 
         else :
             message = SetMenuMessage_Object(course_01)
-            send_flex(event.reply_token,message)
+            send_flex(event.reply_token , message)
             return 'OK'
-            
+
     return 'OK'
 
 
