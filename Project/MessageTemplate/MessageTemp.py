@@ -37,9 +37,10 @@ course_01 = {
     "contents": [
       {
         "type": "bubble",
+        "direction": "ltr",
         "hero": {
           "type": "image",
-          "url": app_url +"/PIC/01.jpg",
+          "url": app_url+"/PIC/01.jpg",
           "size": "full",
           "aspectRatio": "20:13",
           "aspectMode": "cover"
@@ -48,6 +49,11 @@ course_01 = {
           "type": "box",
           "layout": "vertical",
           "spacing": "xxl",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          },
           "contents": [
             {
               "type": "text",
@@ -206,7 +212,6 @@ course_01 = {
               "action": {
                 "type": "postback",
                 "label": "ซื้อคอสเรียน",
-
                 "data": "RPINE"
               },
               "color": "#007F4E",
@@ -229,14 +234,25 @@ course_01 = {
         "type": "bubble",
         "hero": {
           "type": "image",
-          "url": app_url +"/PIC/02.jpg",
+          "url": app_url+"/PIC/02.jpg",
           "size": "full",
           "aspectRatio": "20:13",
           "aspectMode": "cover",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          }
+        },
         "body": {
           "type": "box",
           "layout": "vertical",
           "spacing": "xxl",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          },
           "contents": [
             {
               "type": "text",
@@ -395,7 +411,6 @@ course_01 = {
               "action": {
                 "type": "postback",
                 "label": "ซื้อคอสเรียน",
-
                 "data": "DJANGO"
               },
               "color": "#C50020",
@@ -413,12 +428,12 @@ course_01 = {
             }
           ]
         }
-      },},
+      },
       {
         "type": "bubble",
         "hero": {
           "type": "image",
-          "url": app_url +"/PIC/03.jpg",
+          "url": app_url+"/PIC/03.jpg",
           "size": "full",
           "aspectRatio": "20:13",
           "aspectMode": "cover",
@@ -432,6 +447,11 @@ course_01 = {
           "type": "box",
           "layout": "vertical",
           "spacing": "xxl",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          },
           "contents": [
             {
               "type": "text",
@@ -590,7 +610,6 @@ course_01 = {
               "action": {
                 "type": "postback",
                 "label": "ซื้อคอสเรียน",
-
                 "data": "AUBOT"
               },
               "color": "#B400A4",
@@ -613,7 +632,7 @@ course_01 = {
         "type": "bubble",
         "hero": {
           "type": "image",
-          "url": app_url +"/PIC/04.jpg",
+          "url": app_url+"/PIC/04.jpg",
           "size": "full",
           "aspectRatio": "20:13",
           "aspectMode": "cover",
@@ -627,6 +646,11 @@ course_01 = {
           "type": "box",
           "layout": "vertical",
           "spacing": "xxl",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          },
           "contents": [
             {
               "type": "text",
@@ -785,8 +809,7 @@ course_01 = {
               "action": {
                 "type": "postback",
                 "label": "ซื้อคอสเรียน",
-
-                "data": "LINEBOT"
+                "data": "LINE"
               },
               "color": "#006B83",
               "margin": "none",
@@ -845,7 +868,7 @@ course_02 =  {
         },
         {
           "type": "image",
-          "url": "https://uncle-merchant.herokuapp.com/PIC/01.jpg",
+          "url": app_url+"/PIC/01.jpg",
           "size": "full"
         },
         {
@@ -865,7 +888,7 @@ course_02 =  {
         },
         {
           "type": "image",
-          "url": "https://uncle-merchant.herokuapp.com/PIC/02.jpg",
+          "url": app_url+"/PIC/02.jpg",
           "size": "full"
         },
         {
@@ -892,7 +915,7 @@ RPINE = {
     "direction": "ltr",
     "hero": {
       "type": "image",
-      "url": "https://edb51a3a.ngrok.io/PIC/01.jpg",
+      "url": app_url+"/PIC/01.jpg",
       "size": "full",
       "aspectRatio": "20:13",
       "aspectMode": "cover"
@@ -1091,7 +1114,7 @@ DJANGO = {
     "type": "bubble",
     "hero": {
       "type": "image",
-      "url": "https://edb51a3a.ngrok.io/PIC/02.jpg",
+      "url": app_url+"/PIC/02.jpg",
       "size": "full",
       "aspectRatio": "20:13",
       "aspectMode": "cover",
@@ -1295,7 +1318,7 @@ AUBOT = {
     "type": "bubble",
     "hero": {
       "type": "image",
-      "url": "https://edb51a3a.ngrok.io/PIC/03.jpg",
+      "url": app_url+"/PIC/03.jpg",
       "size": "full",
       "aspectRatio": "20:13",
       "aspectMode": "cover",
