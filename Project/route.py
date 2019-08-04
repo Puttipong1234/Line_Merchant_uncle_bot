@@ -1,5 +1,5 @@
 from Project import app , static_file_dir , WebhookParser ,parser
-from flask import send_from_directory , abort , request
+from flask import send_from_directory , abort , request , jsonify
 from Project import session
 
 from linebot.exceptions import (
@@ -44,20 +44,20 @@ def callback():
             if isinstance(event,FollowEvent):
                 message = SetMenuMessage_Object(course_02)
                 send_flex(message)
-                return '200'
+                return jsonify(success=True)
             
             else :
                 message = SetMenuMessage_Object(course_01)
                 send_flex(message)
-                return '200'
+                return jsonify(success=True)
 
         else :
-            return '200'
+            return jsonify(success=True)
         
 
 
     
-    return '200'
+    return jsonify(success=True)
 
 
 
