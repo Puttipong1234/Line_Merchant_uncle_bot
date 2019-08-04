@@ -7,7 +7,7 @@ from linebot.exceptions import (
 
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage , ImageMessage , FollowEvent ,sources,FollowEvent,SendMessage
-
+,PostbackEvent
 )
 
 from Project.Promptpay import Make_QR_for_user_Kbank,Make_QR_for_user_promptpay
@@ -46,6 +46,12 @@ def callback():
             send_flex(event.reply_token,message)
             return 'OK'
         
+        elif isinstance(event,PostbackEvent):
+            print(event.postback.data)
+            message = SetMenuMessage_Object(course_01)
+            send_flex(event.reply_token,message)
+            return 'OK'
+
         else :
             message = SetMenuMessage_Object(course_01)
             send_flex(event.reply_token,message)

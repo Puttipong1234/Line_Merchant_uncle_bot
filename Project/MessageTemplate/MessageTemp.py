@@ -815,7 +815,7 @@ course_01 = {
   }
 }
 
-course_02 = {
+course_02 =  {
   "type": "flex",
   "altText": "Flex Message",
   "contents": {
@@ -824,116 +824,66 @@ course_02 = {
     "header": {
       "type": "box",
       "layout": "vertical",
+      "spacing": "md",
       "contents": [
         {
           "type": "text",
-          "text": "COURSE",
-          "margin": "xxl",
-          "size": "xl",
+          "text": "PROMOTION",
+          "margin": "none",
+          "size": "xxl",
           "align": "center",
           "weight": "bold",
-          "color": "#000000"
+          "color": "#879610"
         },
         {
           "type": "text",
           "text": "ประจำเดือนนี้",
-          "size": "lg",
+          "margin": "none",
+          "size": "xl",
           "align": "center",
+          "gravity": "center",
           "weight": "regular",
-          "color": "#C30000"
+          "color": "#879610"
         },
         {
           "type": "separator",
-          "margin": "xl",
-          "color": "#565656"
-        }
-      ]
-    },
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "contents": [
-            {
-              "type": "image",
-              "url": app_url+"/PIC/01.jpg",
-              "action": {
-                "type": "postback",
-                "label": "ข้อมูลเพิ่มเติม",
-                
-                "data": "01"
-              }
-            },
-            {
-              "type": "separator",
-              "color": "#565656"
-            },
-            {
-              "type": "image",
-              "url": app_url+"/PIC/02.jpg",
-              "action": {
-                "type": "postback",
-                "label": "ข้อมูลเพิ่มเติม",
-                
-                "data": "01"
-              }
-            }
-          ]
-        },
-        {
-          "type": "separator",
-          "margin": "xxl",
+          "margin": "md",
           "color": "#565656"
         },
         {
-          "type": "box",
-          "layout": "horizontal",
-          "margin": "xl",
-          "contents": [
-            {
-              "type": "image",
-              "url": app_url+"/PIC/03.jpg",
-              "action": {
-                "type": "postback",
-                "label": "ข้อมูลเพิ่มเติม",
-                
-                "data": "01"
-              }
-            },
-            {
-              "type": "separator",
-              "color": "#565656"
-            },
-            {
-              "type": "image",
-              "url": app_url+"/PIC/04.jpg",
-              "action": {
-                "type": "postback",
-                "label": "ข้อมูลเพิ่มเติม",
-                
-                "data": "01"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    "footer": {
-      "type": "box",
-      "layout": "horizontal",
-      "contents": [
+          "type": "image",
+          "url": "https://uncle-merchant.herokuapp.com/PIC/01.jpg",
+          "size": "full"
+        },
         {
           "type": "button",
           "action": {
             "type": "postback",
-            "label": "สนใจคอสเรียน",
-            "data": "สนใจคอสเรียน"
+            "label": "ลงทะเบียน คอสนี้",
+            "data": "RPINE"
           },
-          "color": "#D0D0D0",
-          "style": "secondary"
+          "color": "#1B9000",
+          "style": "primary"
+        },
+        {
+          "type": "separator",
+          "margin": "md",
+          "color": "#565656"
+        },
+        {
+          "type": "image",
+          "url": "https://uncle-merchant.herokuapp.com/PIC/02.jpg",
+          "size": "full"
+        },
+        {
+          "type": "button",
+          "action": {
+            "type": "postback",
+            "label": "ลงทะเบียน คอสนี้",
+            "data": "DJANGO"
+          },
+          "color": "#C50020",
+          "style": "primary"
         }
       ]
     }
