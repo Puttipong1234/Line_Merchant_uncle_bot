@@ -13,7 +13,6 @@ from linebot import (
 app_url = "https://uncle-merchant.herokuapp.com"
 
 
-from Project import route
 
 # get channel_secret and channel_access_token from your environment variable
 channel_secret = '4e884f99620d9fa1d728a83f3e2a6c8e'
@@ -22,6 +21,7 @@ channel_access_token = 'brEjhlrvM0K9byTI0dJM6+syPX/ykchnIeiUHg3dfuDo5WAbofHCIJ8m
 line_bot_api = LineBotApi(channel_access_token)
 parser = WebhookParser(channel_secret)
 
+from Project import route
 
     
 

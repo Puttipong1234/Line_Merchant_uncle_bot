@@ -1,6 +1,5 @@
-from Project import app , static_file_dir , WebhookParser ,parser
-from flask import send_from_directory , abort , request , jsonify
-from Project import session
+from Project import app , static_file_dir 
+from flask import send_from_directory , abort , request , session
 
 from linebot.exceptions import (
     InvalidSignatureError
@@ -12,6 +11,8 @@ from linebot.models import (
 )
 
 from Project.Promptpay import Make_QR_for_user_Kbank,Make_QR_for_user_promptpay
+
+from Project import parser
 
 @app.route('/')
 def hello_world():
