@@ -1,5 +1,5 @@
 from Project import app , static_file_dir ,line_bot_api
-from flask import send_from_directory , abort , request , session
+from flask import send_from_directory , abort , request , session , send_file , redirect
 
 from linebot.exceptions import (
     InvalidSignatureError
@@ -7,10 +7,12 @@ from linebot.exceptions import (
 
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage , ImageMessage , FollowEvent ,sources,FollowEvent,SendMessage
-,PostbackEvent
+,PostbackEvent,BaseSize , ImagemapAction , ImagemapSendMessage , ImagemapArea , MessageImagemapAction
 )
 
 from Project.Promptpay import Make_QR_for_user_Kbank,Make_QR_for_user_promptpay
+
+import uuid
 
 from Project import parser
 
@@ -22,6 +24,16 @@ def hello_world():
 @app.route('/PIC/<filename>')
 def return_Pic(filename): 
     return send_from_directory(static_file_dir,filename)
+
+@app.route('/PIC/ImageMap/<filename>')
+def return_ImageMap(filename): 
+    path = static_file_dir + '/ImageMap'
+    return send_from_directory(path,filename)
+
+@app.route("/access_bot/<botID>")
+def accessbot(botID):
+    botID = '@473snduo'
+    return redirect('line://ti/p/'+botID) , 'OK'
 
 from Project.MessageTemplate.MessageTemp import *
 
@@ -42,8 +54,36 @@ def callback():
     # if event is MessageEvent and message is TextMessage, then echo text
     for event in events:
         if isinstance(event,FollowEvent):
-            message = SetMenuMessage_Object(course_02)
-            send_flex(event.reply_token,message)
+
+            actions = []
+            actions.append(MessageImagemapAction(
+                  text = 'PROMOTION',
+                  area = ImagemapArea(
+                      x = 2, y = 2, width = 1040, height = 346
+                  )
+            ))
+            actions.append(MessageImagemapAction(
+                  text = 'COURSES',
+                  area = ImagemapArea(
+                      x = 2, y = 346, width = 1040, height = 346
+                  )
+            ))
+            actions.append(MessageImagemapAction(
+                  text = 'ABOUT UNCLE',
+                  area = ImagemapArea(
+                      x = 0, y = 690, width = 1040, height = 346
+                  )
+            ))
+
+            message = ImagemapSendMessage(
+                
+                # base_url = 'https://' + request.host + '/PIC/ImageMap.jpg', # prevent cache
+                base_url = 'https://' + request.host + '/PIC/ImageMap',
+                alt_text = 'MAP',
+                base_size = BaseSize(height=1040, width=1040),
+                actions = actions
+            )
+            line_bot_api.reply_message(event.reply_token, message)
             return 'OK'
         
         elif isinstance(event,PostbackEvent):
@@ -55,15 +95,24 @@ def callback():
                     send_flex(event.reply_token,message)
                     return 'OK'
 
+
+        elif isinstance(event,MessageEvent):
+            if event.message.text == 'PROMOTION':
+                message = SetMenuMessage_Object(course_02)
+                send_flex(event.reply_token,message)
+                return 'OK'
+            
+            elif event.message.text == 'COURSES':
+                message = SetMenuMessage_Object(course_01)
+                send_flex(event.reply_token,message)
+                return 'OK'
+
         else :
             message = SetMenuMessage_Object(course_01)
             send_flex(event.reply_token , message)
             return 'OK'
 
     return 'OK'
-
-
-    
 
 
 
