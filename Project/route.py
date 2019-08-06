@@ -1,5 +1,5 @@
 from Project import app , static_file_dir ,line_bot_api
-from flask import send_from_directory , abort , request , session , send_file , redirect
+from flask import send_from_directory , abort , request , session , send_file , render_template
 
 from linebot.exceptions import (
     InvalidSignatureError
@@ -32,8 +32,8 @@ def return_ImageMap(filename):
 
 @app.route("/access_bot")
 def accessbot():
-    botID = '@473snduo'
-    return 'TAP TO ACCESS UNCLE BOT >>>>'+'line://ti/p/'+botID +'<<<<', 'OK'
+    botID = 'line://ti/p/@473snduo'
+    return render_template('bot.html',bot = botID)
 
 from Project.MessageTemplate.MessageTemp import *
 
