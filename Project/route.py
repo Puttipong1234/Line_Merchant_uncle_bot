@@ -30,10 +30,10 @@ def return_ImageMap(filename):
     path = static_file_dir + '/ImageMap'
     return send_from_directory(path,filename)
 
-@app.route("/access_bot/<botID>")
-def accessbot(botID):
+@app.route("/access_bot")
+def accessbot():
     botID = '@473snduo'
-    return redirect('line://ti/p/'+botID) , 'OK'
+    return 'TAP TO ACCESS UNCLE BOT >>>>'+'line://ti/p/'+botID +'<<<<', 'OK'
 
 from Project.MessageTemplate.MessageTemp import *
 
