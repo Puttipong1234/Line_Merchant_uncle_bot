@@ -9,7 +9,10 @@ from linebot import (
     LineBotApi, WebhookParser
 )
 
-
+from urllib.parse import urlparse
+o = urlparse(request.base_url)
+host = o.hostname
+## app_url = host
 app_url = "https://uncle-merchant.herokuapp.com"
 
 
